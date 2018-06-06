@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 - Fixed active-responses.log definition path on Windows configuration. ([#739](https://github.com/wazuh/wazuh/pull/739))
+- Fix bug with OpenSCAP that causes many files in the folder tmp on agents. ([#732](https://github.com/wazuh/wazuh/pull/732))
 
 ## [v3.3.1]
 
