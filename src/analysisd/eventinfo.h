@@ -101,6 +101,8 @@ typedef struct _Eventinfo {
     long mtime_after;
     long inode_before;
     long inode_after;
+    char *user;
+    char *process;
     char *diff;
     const char *previous;
     const wlabel_t *labels;
