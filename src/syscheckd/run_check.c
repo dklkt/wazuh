@@ -185,6 +185,15 @@ void start_daemon()
         }
     }
 
+    // Audit events thread
+    int audit_socket = audit_init();
+    if (audit_socket > 0) {
+        mdebug1("Stating Auditd events reading thread ...");
+        w_create_thread(audit_main, &audit_socket);
+    } else {
+        mdebug1("Cannot start Audit events reading thread.");
+    }
+
     /* Check every SYSCHECK_WAIT */
     while (1) {
         int run_now = 0;

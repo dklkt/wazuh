@@ -60,6 +60,9 @@ int realtime_process(void);
 /* Process the content of the file changes */
 char *seechanges_addfile(const char *filename) __attribute__((nonnull));
 
+/* Generate the whodata csum */
+int extract_whodata_sum(whodata_evt *evt, char *wd_sum, int size) __attribute__((nonnull));
+
 /* Get checksum changes */
 int c_read_file(const char *file_name, const char *oldsum, char *newsum) __attribute__((nonnull));
 
@@ -69,9 +72,15 @@ int send_rootcheck_msg(const char *msg) __attribute__((nonnull));
 const char* get_user(const char *path, int uid);
 const char* get_group(int gid);
 
+int realtime_checksumfile(const char *file_name, whodata_evt *evt) __attribute__((nonnull(1)));
+
 #ifndef WIN32
+int audit_init(void);
 int check_auditd_enabled(void);
-int check_auditd_config(void);
+int set_auditd_config(void);
+int init_auditd_socket(void);
+int add_audit_rule(const char *dir);
+void * audit_main(int *audit_sock);
 #endif
 
 #endif
