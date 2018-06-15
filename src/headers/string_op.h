@@ -54,6 +54,9 @@ char* filter_special_chars(const char *string);
 // Replace substrings
 char * wstr_replace(const char * string, const char * search, const char * replace);
 
+// Locate first occurrence of non escaped character in string
+char * wstr_chr(char * str, int character);
+
 // Free string array
 void free_strarray(char ** array);
 

@@ -153,7 +153,8 @@ void * audit_main(int * audit_sock) {
                 uid = malloc(match_size + 1);
                 snprintf (uid, match_size +1, "%.*s", match_size, buffer + match[1].rm_so);
                 w_evt->user_name = (char *)get_user("",atoi(uid));
-                w_evt->user_id = uid;
+                w_evt->user_id = strdup(uid);
+                free(uid);
             }
 
             if(regexec(&regexCompiled_pid, buffer, 2, match, 0) == 0) {
@@ -168,14 +169,16 @@ void * audit_main(int * audit_sock) {
                 match_size = match[1].rm_eo - match[1].rm_so;
                 path = malloc(match_size + 1);
                 snprintf (path, match_size +1, "%.*s", match_size, buffer + match[1].rm_so);
-                w_evt->path = path;
+                w_evt->path = strdup(path);
+                free(path);
             }
 
             if(regexec(&regexCompiled_pname, buffer, 2, match, 0) == 0) {
                 match_size = match[1].rm_eo - match[1].rm_so;
                 pname = malloc(match_size + 1);
                 snprintf (pname, match_size +1, "%.*s", match_size, buffer + match[1].rm_so);
-                w_evt->process_name = pname;
+                w_evt->process_name = strdup(pname);
+                free(pname);
             }
 
             if (path) {

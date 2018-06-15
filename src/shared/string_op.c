@@ -252,6 +252,27 @@ char * wstr_replace(const char * string, const char * search, const char * repla
     return result;
 }
 
+// Locate first occurrence of non escaped character in string
+
+char * wstr_chr(char * str, int character) {
+    char escaped = 0;
+
+    for (;*str != '\0'; str++) {
+        if (!escaped) {
+            if (*str == character) {
+                return str;
+            }
+            if (*str == '\\') {
+                escaped = 1;
+            }
+        } else {
+            escaped = 0;
+        }
+    }
+
+    return NULL;
+}
+
 // Free string array
 void free_strarray(char ** array) {
     int i;
