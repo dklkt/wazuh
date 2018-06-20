@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 
 ### Fixed
 
-- Fix PID file creation checking.
+- Fix PID file creation checking. ([#822](https://github.com/wazuh/wazuh/pull/822))
   - Check that the PID file was created and written.
   - This would prevent service from running multiple processes of the same daemon.
 
