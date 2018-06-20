@@ -1,6 +1,14 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [v3.3.2]
+
+### Fixed
+
+- Fix PID file creation checking.
+  - Check that the PID file was created and written.
+  - This would prevent service from running multiple processes of the same daemon.
+
 ## [v3.3.1]
 
 ### Added
