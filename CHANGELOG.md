@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [v3.3.2]
+
+### Fixed
+
+- Removed frequency offset in rules. ([#827](https://github.com/wazuh/wazuh/pull/827)).
+
+
 ## [v3.3.1]
 
 ### Added
