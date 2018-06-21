@@ -1,6 +1,12 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [v3.3.2]
+
+### Fixed
+
+- Fixed error messages when Rootcheck and Syscheck start. ([#829](https://github.com/wazuh/wazuh/pull/829))
+
 ## [v3.3.1]
 
 ### Added
