@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 
 - Fixed active-responses.log definition path on Windows configuration. ([#739](https://github.com/wazuh/wazuh/pull/739))
+- Fixed parser files names in Rootcheck scan. ([#840](https://github.com/wazuh/wazuh/pull/840))
 
 ## [v3.3.1]
 
